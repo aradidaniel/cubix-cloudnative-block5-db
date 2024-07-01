@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v3
     - name: Docker login
       run: docker login ghcr.io -u ${{ github.repository_owner }} -p ${{ github.token }}
     - name: Set up JDK 21
